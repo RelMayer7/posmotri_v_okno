@@ -16,6 +16,9 @@ html {
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1,
@@ -52,7 +55,6 @@ fieldset {
 } 
 
 .content {
-  margin: 133px auto;
   display: flex;
   align-items: flex-end;
   width: 1140px;
@@ -138,12 +140,11 @@ fieldset {
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
-  position: absolute;
+  display: block;
   width: 15px;
   height: 15px;
   background-color: #fff;
-  left: 1px;
-  top: 1px;
+  margin: 1px;
 }
 
 .button {
