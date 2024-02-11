@@ -9,16 +9,16 @@ html {
 }
 
 .page {
-  inline-size: 1200px;
-  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: auto;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
   font-size: 18px;
   background-color: #1b1919;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  inline-size: 1200px;
+  block-size: 100%;
 }
 
 h1,
@@ -46,10 +46,10 @@ fieldset {
 
 .visually-hidden {
   position: absolute;
-  inline-size: 1px;
-  block-size: 1px;
   overflow: hidden;
   clip: rect(0 0 0 0);
+  inline-size: 1px;
+  block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
 } 
@@ -57,22 +57,21 @@ fieldset {
 .content {
   display: flex;
   align-items: flex-end;
-  width: 1140px;
-  height: 534px;
   gap: 30px;
+  width: 1140px;
 }
 
 .result__video-container {
-  margin-bottom: 16px;
+  position: relative;
   width: 711px;
   height: 386px;
-  position: relative;
+  margin-bottom: 16px;
 }
 
 .result__video {
-  object-fit: cover;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .search-form {
@@ -81,9 +80,10 @@ fieldset {
 }
 
 .search-form__fieldset-title {
-  font-size: 18px;
+  margin-bottom: 5px;
   font-weight: 400;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 .search-form__label {
@@ -106,16 +106,16 @@ fieldset {
 }
 
 .search-form__textfield {
-  appearance: none;
-  background: transparent;
-  font-family: inherit;
-  color: rgba(255 255 255 / 0.7);
-  font-size: 18px;
   width: 225px;
-  border-left: none;
-  border-right: none;
   border-color: rgba(255 255 255);
+  border-right: none;
+  border-left: none;
   padding: 0;
+  color: rgba(255 255 255 / 0.7);
+  font-family: inherit;
+  font-size: 18px;
+  background: transparent;
+  appearance: none;
 }
 
 .search-form__textfield:focus {
@@ -125,17 +125,17 @@ fieldset {
 
 .search-form__checkbox-list {
   display: flex;
-  gap: 20px;
+  gap: 15px;
 }
 
 .search-form__pseudo-checkbox {
+  position: relative;
   display: inline-block;
   width: 19px;
   height: 19px;
+  margin-right: 3.5px;
   border: 1px solid #fff;
   background-position: center;
-  margin-right: 3.5px;
-  position: relative;
 }
 
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
@@ -143,18 +143,18 @@ fieldset {
   display: block;
   width: 15px;
   height: 15px;
-  background-color: #fff;
   margin: 1px;
+  background-color: #fff;
 }
 
 .button {
-  cursor: pointer;
-  background: transparent;
   border: 1px solid #fff;
-  font-size: 18px;
-  color: rgb(255 255 255);
-  font-weight: 700;
+  color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
 }
 
 .button:focus {
@@ -165,36 +165,35 @@ fieldset {
   text-decoration: underline;
 }
 
-button:active {
+.button:active {
   background: rgb(84 80 80);
 }
 
 .button:focus-visible {
-  outline: 1px solid white;
+  outline: 1px solid #fff;
   outline-offset: 1px;
 }
 
 .search-form__submit-button {
-  width: 194px;
-  height: 34px;
   align-self: flex-end;
+  width: 194px;
+  padding: 6px 0;
 }
 
-
 .content__details {
-  width: 100%;
-  height: 100%;
   display:flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .title {
   font-family: Oswald, sans-serif;
-  font-size: 75px;
   font-weight: 700;
-  text-transform: uppercase;
+  font-size: 75px;
   line-height: 94%;
+  text-transform: uppercase;
 }
 
 .content__accent {
@@ -202,20 +201,20 @@ button:active {
 }
 
 .content__list {
-  max-height: 534px;
-  overflow-y: scroll;
   position: relative;
+  max-height: 300px;
+  overflow-y: scroll;
 }
 
-.content__list-item:not(:last-of-type) {
+.content__list-item:not(:last-child) {
   margin-bottom: 35px;
 }
 
 .content__card-link {
   display: block;
-  text-decoration: none;
-  color: rgb(255 255 255);
   margin: 2px;
+  color: #fff;
+  text-decoration: none;
 }
 
 .content__card-link:focus {
@@ -234,7 +233,7 @@ button:active {
   background: rgb(84 80 80);
 }
 
-.content__card-link_current:active {
+.content__card-link_current {
   background: rgb(84 80 80);
 }
 
@@ -245,25 +244,32 @@ button:active {
 
 .content__video-card-description-container {
   flex-grow: 1;
+  padding-top: 4px;
+  padding-left: 2px;
 }
 
 .content__video-card-title {
-  font-size: 30px;
+  padding-bottom: 6px;
+  font-family: Oswald, sans-serif;
   font-weight: 700;
-  text-transform: uppercase;
+  font-size: 30px;
   line-height: 100%;
+  text-transform: uppercase;
 }
 
 .content__video-card-description {
   line-height: 1;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .content__video-card-thumbnail {
-  max-width: 194px;
-  max-height: 103px;
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
 }
 
 .more-button {
   width: 100%;
-  height: 34px;
+  padding: 6px 0;
 }
